@@ -46,6 +46,12 @@ namespace BAI_1_0_ONTAP_NET101_CRUD
                         break;
                 }
             } while (input != "6");
+
+            /*
+             * 1. TÌm kiếm gần đúng theo tên
+             * 2. TÌm kiếm cân nặng theo khoảng
+             * 3. Sắp xếp theo cân nặng.
+             */
         }
     }
 }
