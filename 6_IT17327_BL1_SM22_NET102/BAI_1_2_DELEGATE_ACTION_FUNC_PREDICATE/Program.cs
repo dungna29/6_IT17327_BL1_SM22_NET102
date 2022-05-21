@@ -99,8 +99,12 @@ namespace BAI_1_2_DELEGATE_ACTION_FUNC_PREDICATE
              * Action<string,int,double> actionbt3;
              * Func<int,string,string> funcbt4;
              */
-           
             #endregion
+            Action<string, int, double> actionbt3 = method1;
+        }
+
+        static void method1(string a,int b,double c)
+        {
 
         }
     }
