@@ -39,11 +39,69 @@ namespace BAI_1_6_EXCEPTION
               - COMException [Lớp này mở rộng từ ExternalException, ngoại lệ đóng gói thông tin COM.]
               - SEHException [Lớp này mở rộng từ ExternalException, nó tóm lược các ngoại lệ từ Win32.]
        */
-
-
+        public static void ViDu1()
+        {
+            int a = 5, b = 0, c;
+            c = a / b;// Exception: System.DivideByZeroException: Attempted to divide by zero.
+            Console.WriteLine(c);
+            Console.WriteLine("Chạy đến cuối phương thức");
+        } 
+        public static void ViDu2()
+        {
+           
+            int a = 5, b = 0, c;
+            try
+            {
+                c = a / Convert.ToInt32("a");// Exception: System.DivideByZeroException: Attempted to divide by zero.
+                Console.WriteLine(c);
+            }
+            catch (Exception dungna)
+            {
+                /*
+                * 1. Trong chương trình khi phát sinh 1 lỗi xảy ra thì sẽ phát sinh đối tượng Exception hoặc lớp kế thừa từ lớp này. Lớp này giúp hiển thị các thông tin về lỗi giúp xử lý các bước tiếp theo.
+                   - e.Message : Thông tin về lỗi
+                   - e.StackTrace: Truy vết của lỗi nằm ở đâu
+                   - e.GetType().Name: Thông tin lỗi của lớp nào
+                   ..... Hãy khám phá thêm trong quá trình học
+                */
+                Console.WriteLine("Các lỗi xảy ra: ");
+                Console.WriteLine(dungna.Message);
+                Console.WriteLine(dungna.StackTrace);
+                Console.WriteLine(dungna.GetType().Name);
+                Console.WriteLine("Lỗi rồi");
+            }
+            Console.WriteLine("Chạy đến cuối phương thức");
+        }
+        //Ví dụ 3: Sử dụng Finally
+        public static void ViDu3()
+        {
+            int a = 5, b = 0, c;
+            try
+            {
+                c = a / b; // Exception: System.DivideByZeroException: Attempted to divide by zero.
+                Console.WriteLine(c);
+            }
+            catch (DivideByZeroException e)
+            {
+                //Thực thi 1 hành động nào đó nếu lỗi
+            }catch (FormatException e)
+            {
+                //Thực thi 1 hành động nào đó nếu lỗi
+            }
+            catch (Exception e)
+            {
+                //Thực thi 1 hành động nào đó nếu lỗi
+            }
+            finally
+            {
+                Console.WriteLine("finally");
+            }
+            Console.WriteLine("Chạy đến cuối phương thức");
+        }
         #endregion
         static void Main(string[] args)
         {
+            ViDu3();
         }
     }
 }
