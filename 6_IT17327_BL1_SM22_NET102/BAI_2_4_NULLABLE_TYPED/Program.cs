@@ -33,6 +33,30 @@ namespace BAI_2_4_NULLABLE_TYPED
             class1 = null;//Class1 đang không tham chiếu đến đối tượng nào cả
             class1.Method1();
 
+            string temp = null;
+            //int temp1 = null;// int là kiểu tham trị, nó chỉ có thể gán biến s2 = 1.Và tham trị thì không thể gán null
+            List<int> lst = null;
+
+            #endregion
+
+            #region Phần 2: Nullable Type
+
+            Nullable<int> n1 = null;
+            Nullable<long> n2 = null;
+            int? n3 = null;
+            int? n4 = 20;
+            int?[] arr = new int?[5];
+
+            int n5 = 4;
+            //n5 = n4; Lỗi
+            n5 = n4 ?? 0;//n5 = n4 khi n4 != null Ngược lại thì n5 = 0
+
+            if (n3.HasValue)//Kiểm tra giá trị trước khi dùng
+            {
+                //Thân code
+            }
+
+            Console.WriteLine(n3.GetValueOrDefault());// = 0 là giá trị mặc định của nguyên
             #endregion
         }
 
