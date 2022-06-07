@@ -83,12 +83,12 @@ namespace BAI_2_5_THAO_TAC_VOI_TAP_TIN_System.IO
             // Console.WriteLine("Parent={0}", di.Parent);
 
             //Create
-            DirectoryInfo di = new DirectoryInfo(@"C:\fpoly\xyz");
-            di.Create();
+            // DirectoryInfo di = new DirectoryInfo(@"C:\fpoly\xyz");
+            // di.Create();
 
-            //DirectoryInfo di=new DirectoryInfo(@"D:\");  
-            //di.CreateSubdirectory("ajay");
-            //di.CreateSubdirectory(@"ajay\ajay11");
+            // DirectoryInfo di=new DirectoryInfo(@"C:\");  
+            // di.CreateSubdirectory("ajay");
+            // di.CreateSubdirectory(@"ajay\ajay11");
 
         }
         static void DirectoryInfo2()
@@ -121,6 +121,8 @@ namespace BAI_2_5_THAO_TAC_VOI_TAP_TIN_System.IO
 
         static void FileReadWriteAllText()
         {
+            //"C:\Csharp2\dungna29.txt" -- Copy as path
+            //"C:\Users\nguye\Desktop\dungna29_Spring22_Data.xlsx"
             string path = @"C:\Csharp2\dungna29.txt";
             Console.WriteLine(File.ReadAllText(path));
 
@@ -233,6 +235,7 @@ namespace BAI_2_5_THAO_TAC_VOI_TAP_TIN_System.IO
         static void Main(string[] args)
         {
             FileReadWriteAllText();
+           
         }
     }
 }
